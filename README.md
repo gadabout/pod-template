@@ -24,3 +24,6 @@ It is open to communal input, but adding new features, or new ideas are probably
 ## Requirements:
 
 - CocoaPods 1.0.0+
+- 100% Unit testable
+- Versioned
+- Possible to be enabled as a development pod
