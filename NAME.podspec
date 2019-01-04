@@ -25,10 +25,10 @@ TODO: Add long description of the pod here.
   s.license          = { :type => 'UNLICENSED', :file => 'LICENSE' }
   s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
   s.source           = { :git => 'https://github.com/gadabout/${POD_NAME}.git', :tag => s.version.to_s }
-  s.swift_version    = '4.2'
 
-  s.ios.deployment_target = '10.0'
-
+  s.requires_arc = true
+  s.swift_version = "4.2"
+  s.ios.deployment_target = "10.0"
   s.source_files = '${POD_NAME}/Classes/**/*'
 
   # s.resource_bundles = {
