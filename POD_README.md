@@ -13,10 +13,11 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Installation
 
-${POD_NAME} is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+${POD_NAME} is available through [Peek Pods Specifications Repo](https://github.com/gadabout/pps-ios).
+To install it, simply add the following lines to your Podfile:
 
 ```ruby
+source 'git@github.com:gadabout/pps-ios.git'
+
 pod '${POD_NAME}'
 ```
-
