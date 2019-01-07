@@ -5,11 +5,15 @@
 language: objective-c
 osx_image: xcode10.1
 xcode_sdk: iphonesimulator12.1
-# cache: cocoapods
-# podfile: Example/Podfile
-# before_install:
-# - gem install cocoapods # Since Travis is not always on latest version
-# - pod install --project-directory=Example
+cache: cocoapods
+podfile: Example/Podfile
+before_install:
+- gem install cocoapods # Since Travis is not always on latest version
+- pod install --project-directory=Example
 script:
 - set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/${POD_NAME}.xcworkspace -scheme ${POD_NAME}-Example -sdk iphonesimulator12.1 ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint --allow-warnings
+- xcodebuild -scheme ${POD_NAME}-Example -workspace Example/${POD_NAME}.xcworkspace -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone X,OS=12.1' build test
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash) -cF ios
